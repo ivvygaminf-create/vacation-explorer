@@ -1,0 +1,181 @@
+    /* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: lightblue;
+}
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fcfafa;
+  box-shadow: rgb(8, 8, 8) 0px 2px 5px;
+  position: fixed;
+  right: 985px;
+  margin-top:0px;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: rgb(5, 5, 5);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+  font-size: 20px;
+  transition: color 0.25s;
+}
+
+ul li a:hover {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-decoration: underline white;
+}
+#login {
+    position: fixed;
+    right: 5px;
+    top: 2px;
+    padding: 5px 30px;
+    font-size: 16px;
+    font-style: arial;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login:hover {
+    background: radial-gradient(circle farthest-corner at 10% 5%, rgba(8,8,8,1) 19.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-decoration: underline white;
+    box-shadow: 70px 0 15px rgba(2, 2, 2, 0.7);
+}
+#login:active {
+    animation: move 0.5s;
+  
+}
+
+        header {
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        main {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0077b6;
+        }
+
+        .beach-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .beach-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .beach-card:hover {
+            transform: scale(1.05);
+        }
+
+        .beach-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .beach-card .content {
+            padding: 20px;
+        }
+
+        .beach-card h3 {
+            margin-top: 0;
+            color: #0077b6;
+        }
+
+        .beach-card p {
+            line-height: 1.6;
+        }
+
+       
+        
+
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+.total-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.7);
+}
+.button2 {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 20px;
+    border:rgb(2, 245, 255) 1px solid;
+    
+}
+.button2:hover{
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: underline white;
+    box-shadow: rgb(2, 245, 255) 0px 2px 5px;
+}
+footer {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: rgb(8, 8, 8) 0px -2px 5px;
+    font-size: 18px;
+}

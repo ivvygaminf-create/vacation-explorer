@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+<link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <h1>Checkout</h1>
+
+  <ul id="item-list"></ul>
+
+  <h2>Total: $<span id="checkout-total">0</span></h2>
+
+  <a href="index.html" class="back">Back to Shop</a>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let total = parseFloat(localStorage.getItem('total')) || 0;
+
+    const itemList = document.getElementById('item-list');
+    const totalDisplay = document.getElementById('checkout-total');
+
+   function renderItems() {
+  itemList.innerHTML = '';
+  for (let itemName in cart) {
+    const { price, quantity } = cart[itemName];
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>
+        ${itemName} - $${price} 
+        <br>
+        <label>
+          Quantity:
+          <input type="number" min="1" value="${quantity}" style="width: 50px;" class="qty-input">
+        </label>
+      </span>
+      <button class="remove-btn">Remove</button>
+    `;
+
+    li.querySelector('.remove-btn').addEventListener('click', () => {
+      delete cart[itemName];
+      updateTotal();
+      renderItems();
+    });
+
+    // Listen for quantity change
+    const qtyInput = li.querySelector('.qty-input');
+    qtyInput.addEventListener('change', (e) => {
+      const newQty = parseInt(e.target.value) || 1;
+      cart[itemName].quantity = newQty;
+      updateTotal();
+      renderItems();
+    });
+
+    itemList.appendChild(li);
+  }
+  totalDisplay.textContent = total.toFixed(2);
+}
+
+    function updateTotal() {
+      total = 0;
+      for (let item in cart) {
+        total += cart[item].price * cart[item].quantity;
+      }
+      totalDisplay.textContent = total.toFixed(2);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('total', total.toFixed(2));
+    }
+
+    updateTotal();
+    renderItems();
+  </script>
+</body>
+</html>

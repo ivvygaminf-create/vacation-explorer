@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+<body>
+    <div class="wrapper">
+    <h1>Sign Up</h1>
+    <form id="loginForm" action="index.html" method="post">
+        <input type="text" id="username" placeholder="username" name="username" required>
+        <br>
+        <input type="password" id="password" placeholder="password" name="password" required>
+         <span class="eye-icon" onclick="togglePasswordVisibility()" style="cursor: pointer;">👁️‍🗨️</span>
+        <br>
+        <input type="email" id="email" placeholder="email" name="email" required>
+        <br>
+        <input type="text" id="fullname" placeholder="Full Name" name="fullname" required>
+        <br>
+        <input type="text" id="zipcode" placeholder="zip code" name="zipcode" required>
+<select id="country" name="country" required>
+    <option value="">Select Country</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="Belgium">Belgium</option>
+    <option value="Germany">Germany</option>
+    <option value="China">China</option>
+    <option value="France">France</option>
+    <option value="United Kingdom">United Kingdom</option>
+    <option value="United States">United States</option>
+</select>
+        <input type="text" id="city" placeholder="City" name="city" required>
+        <input type="text" id="address" placeholder="Address" name="address" required>
+        <br>
+        <input type="number" id="phone" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+        <br>
+       <input type="radio" id="terms" name="terms" value="agree" required>
+        <label for="terms">I agree to the Terms and Conditions</label>
+        <br>
+        <input type="radio" id="terms2" name="terms" value="disagree">
+        <label for="terms2">I don't agree to the Terms and Conditions</label>
+        <br>
+        <input type="checkbox" id="privacy" name="privacy" class="why">
+        <label class="for" for="privacy" value="I agree to the Privacy Policy">I agree to the Privacy Policy </label>
+<details id="moreInfo">
+  <summary id="summaryText">More Info</summary>
+  <p>i agree with the following terms. my personal data will be processed in accordance with the privacy policy.</p>
+</details>        
+<button id="button" type="submit" value="Sign Up" >Sign Up</button>
+        <p>already have an account? <a href="inlog.html">Log In</a>
+        </p>
+        
+    </form>
+    </div>
+</body>
+</html>

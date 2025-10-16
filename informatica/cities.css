@@ -1,0 +1,298 @@
+body {
+    background: lightblue;
+}
+h1 {
+    color: black;
+    font-size: 40px;
+    background:radial-gradient(white, lightblue);
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fcfafa;
+  box-shadow: rgb(8, 8, 8) 0px 2px 5px;
+  position: fixed;
+  right: 985px;
+  margin-top: -40px;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: rgb(5, 5, 5);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+  font-size: 20px;
+  transition: color 0.25s;
+}
+
+ul li a:hover {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-decoration: underline white;
+}
+#login {
+    position: fixed;
+    right: 5px;
+    top: 2px;
+    padding: 5px 30px;
+    font-size: 16px;
+    font-style: arial;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login:hover {
+    background: radial-gradient(circle farthest-corner at 10% 5%, rgba(8,8,8,1) 19.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-decoration: underline white;
+    box-shadow: 70px 0 15px rgba(2, 2, 2, 0.7);
+}
+#login:active {
+    animation: move 0.5s;
+  
+}
+
+@keyframes move {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-20px);}
+    100% {transform: translateY(0px);}
+}
+#account {
+    position: fixed;
+    right: 5px;
+    top: 2px;
+    padding: 5px 30px;
+    font-size: 35px;
+    font-style: arial;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 70px;
+    margin-top: -7px;
+}
+#account:hover {
+    color: white;
+}
+#loader {
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loader::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 8px solid #000000;
+  border-top: 8px solid #770581;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.container {
+    margin: 100px 0 200px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.container img {
+    width: 10%;
+    height: 150%;
+    object-fit: cover;
+    border-radius: 10px;  
+    border: 2px solid black;
+    transition: all ease-in-out 0.5s;
+    margin-top: -80px;
+}
+.container img:hover {
+    width: 60% ;
+}
+.total-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.7);
+}
+.button2 {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 20px;
+    border:rgb(2, 245, 255) 1px solid;
+    
+}
+.button2:hover{
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: underline white;
+    box-shadow: rgb(2, 245, 255) 0px 2px 5px;
+}
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    margin-top: -70px;
+    background:radial-gradient(white, lightblue);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+p {
+    font-size: 20px;
+    text-align: center;
+}
+#discription {
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    text-align: center;
+    margin-top: -23px;
+}
+
+    h3 {
+        font-size: 28px;
+        color: black;
+        text-align: center;
+            background:radial-gradient(white, lightblue);
+
+    }
+h4 {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+    background:radial-gradient(white, lightblue);
+
+}
+h5 {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+    background:radial-gradient(white, lightblue);
+
+}
+h6 {
+    text-align: center;
+    font-size: 28px;
+    background:radial-gradient(white, lightblue);    
+    color: black;
+}
+h7 {
+    text-align: center;
+    font-size: 28px;
+    background:radial-gradient(white, lightblue); 
+    color: black;
+}
+h8 {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+}
+.paris-img, .rome-img, .athene-img, .barcelona-img, .vienna-img {
+    width: 50%;
+    height: 300px;
+    border-radius: 10px;  
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.paris-img:hover, .rome-img:hover, .athene-img:hover, .barcelona-img:hover, .vienna-img:hover{
+    width: 55%;
+    height: 330px;
+    transition: all ease-in-out 0.5s;
+}
+details :hover {
+    cursor: pointer;
+}
+details[open] p {
+    font-family: Arial, Helvetica, sans-serif; 
+    color: black;
+}
+details summary {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+details li {
+    font-family: Arial, Helvetica, sans-serif; 
+    color: black;
+    font-size: 18px;
+}
+
+details summary:hover {
+    text-decoration: underline;
+    color: teal;
+}
+footer {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(8,8,8,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: rgb(8, 8, 8) 0px -2px 5px;
+    font-size: 18px;
+    margin-top: -200px;
+}
+input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+    
+}
+input[type="checkbox"]:hover {
+    box-shadow: rgb(2, 245, 255) 0px 0px 5px;
+}
+.div1 img, .div2 img, .div3 img, .div4 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;  
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: all ease-in-out 0.5s;
+}
+.div1 img:hover, .div2 img:hover, .div3 img:hover, .div4 img:hover {
+    width: 110%;
+    height: 220px;
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.div1 { grid-area: 1 / 3 / 2 / 4; }
+.div2 { grid-area: 2 / 3 / 3 / 4; }
+.div3 { grid-area: 1 / 4 / 2 / 5; }
+.div4 { grid-area: 2 / 4 / 3 / 5; }

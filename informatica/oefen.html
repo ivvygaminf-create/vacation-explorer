@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding-bottom: 80px;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f9f9f9;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .total-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      background: #28a745;
+      padding: 8px 15px;
+      border-radius: 6px;
+      margin-left: 10px;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Items</h1>
+<i class="bi bi-cart"></i>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg>
+  <div class="item">
+    <label><input type="checkbox" class="item-check" data-name="1. Standard Everest Base Camp Trek – 14 Days" data-price="1350"> 1. Standard Everest Base Camp Trek – 14 Days - $1350</label>
+    <input type="number" class="quantity" value="1" min="1" disabled>
+  </div>
+
+  <div class="item">
+    <label><input type="checkbox" class="item-check" data-name="Soda" data-price="5"> 🥤 Soda - $5</label>
+    <input type="number" class="quantity" value="1" min="1" disabled>
+  </div>
+
+  <div class="item">
+    <label><input type="checkbox" class="item-check" data-name="Fries" data-price="7"> 🍟 Fries - $7</label>
+    <input type="number" class="quantity" value="1" min="1" disabled>
+  </div>
+
+  <div class="item">
+    <label><input type="checkbox" class="item-check" data-name="Burger" data-price="12"> 🍔 Burger - $12</label>
+    <input type="number" class="quantity" value="1" min="1" disabled>
+  </div>
+
+  <div class="item">
+    <label><input type="checkbox" class="item-check" data-name="Cookie" data-price="4"> 🍪 Cookie - $4</label>
+    <input type="number" class="quantity" value="1" min="1" placeholder="Quantity">
+  </div>
+
+  <div class="total-bar">
+    <strong>Total: $<span id="total">0</span></strong>
+    <a href="html.html">Go to Checkout</a>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.item-check');
+    const totalDisplay = document.getElementById('total');
+    const quantities = document.querySelectorAll('.quantity');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let total = 0;
+
+    // Function to update total
+    function updateTotal() {
+      total = 0;
+      for (let item in cart) {
+        total += cart[item].price * cart[item].quantity;
+      }
+      totalDisplay.textContent = total.toFixed(2);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('total', total.toFixed(2));
+    }
+
+    // Load saved cart
+    for (let item in cart) {
+      checkboxes.forEach((box, index) => {
+        const name = box.dataset.name;
+        const qtyInput = quantities[index];
+        if (name === item) {
+          box.checked = true;
+          qtyInput.disabled = false;
+          qtyInput.value = cart[item].quantity;
+        }
+      });
+    }
+    updateTotal();
+
+    // Checkbox handler
+    checkboxes.forEach((box, index) => {
+      const qtyInput = quantities[index];
+      const price = parseFloat(box.dataset.price);
+      const name = box.dataset.name;
+
+      box.addEventListener('change', () => {
+        if (box.checked) {
+          qtyInput.disabled = false;
+          cart[name] = { price, quantity: parseInt(qtyInput.value) };
+        } else {
+          qtyInput.disabled = true;
+          delete cart[name];
+        }
+        updateTotal();
+      });
+
+      qtyInput.addEventListener('input', () => {
+        if (cart[name]) {
+          cart[name].quantity = parseInt(qtyInput.value);
+          updateTotal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

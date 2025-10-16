@@ -1,0 +1,40 @@
+ody {
+    background: linear-gradient(45deg, #8d0000, #44006b, #270167, #104333);
+    background-attachment: fixed;
+    background-size: 500%;
+    animation: backgroundanimation 4s infinite ease;
+
+}
+@keyframes backgroundanimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+button {
+    background: transparent;
+    border: lime 2px solid;
+    font-size: 40px;
+    padding: 5px 20px;
+    border-radius: 4px;
+    align-items: center;
+    margin-top: 200px;
+    margin-left: 550px;
+    box-shadow: lime 0 3px 20px;
+}
+
+button:hover {
+    background: lime;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 60px lime;
+    -webkit-box-reflect: below 4px linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+}
+button:active {
+    background: green;
+    border: green 2px solid;
+    box-shadow: 0 0 20px green;
+    color: white;
+}
